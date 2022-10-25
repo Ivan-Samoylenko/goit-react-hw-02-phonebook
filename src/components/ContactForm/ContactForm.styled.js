@@ -1,4 +1,23 @@
 import styled from 'styled-components';
+// import {
+//   Form as unstyledForm,
+//   Field as unstyledField,
+//   ErrorMessage as unstyledErrorMessage,
+// } from 'formik';
+
+// export const Form = styled(unstyledForm)`
+//   width: 800px;
+//   background-color: red;
+// `;
+
+// export const Field = styled(unstyledField)`
+//   width: 600px;
+//   background-color: orange;
+// `;
+
+// export const ErrorMessage = styled(unstyledErrorMessage)`
+//   color: red;
+// `;
 
 export const SubmitBtn = styled.button`
   margin: 15px;
