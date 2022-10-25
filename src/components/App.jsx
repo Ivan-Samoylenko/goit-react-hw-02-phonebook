@@ -11,9 +11,7 @@ export class App extends Component {
   };
 
   handleSubmit = event => {
-    this.setState(state => {
-      state.contacts = [...state.contacts, { ...event, id: nanoid() }];
-    });
+    this.setState(state => [...state.contacts, { ...event, id: nanoid() }]);
   };
 
   handleFind = event => {
@@ -21,7 +19,6 @@ export class App extends Component {
   };
 
   handleDeleteBtn = event => {
-    console.log(event.currentTarget.id);
     this.setState(state =>
       state.contacts.filter(contact => contact.id !== event.currentTarget.id)
     );
