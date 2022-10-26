@@ -1,30 +1,41 @@
 import styled from 'styled-components';
-// import {
-//   Form as unstyledForm,
-//   Field as unstyledField,
-//   ErrorMessage as unstyledErrorMessage,
-// } from 'formik';
+import {
+  Form as FormikForm,
+  Field as FormikField,
+  ErrorMessage as FormikErrorMessage,
+} from 'formik';
 
-// export const Form = styled(unstyledForm)`
-//   width: 800px;
-//   background-color: red;
-// `;
-
-// export const Field = styled(unstyledField)`
-//   width: 600px;
-//   background-color: orange;
-// `;
-
-// export const ErrorMessage = styled(unstyledErrorMessage)`
-//   color: red;
-// `;
-
-export const SubmitBtn = styled.button`
-  margin: 15px;
-  border: 0 solid transparent;
-  padding: 4px 8px;
+export const Form = styled(FormikForm)`
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
 
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const FieldWraper = styled.label`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Field = styled(FormikField)`
+  background-color: rgb(255, 200, 0);
+`;
+
+export const ErrorMessage = styled(FormikErrorMessage)`
+  color: red;
+`;
+
+export const SubmitBtn = styled.button`
+  margin-right: auto;
+  margin-left: auto;
+  border: 0 solid transparent;
+  padding: 4px 16px;
+
+  display: flex;
+  justify-content: center;
   align-items: center;
 
   font-size: 24px;

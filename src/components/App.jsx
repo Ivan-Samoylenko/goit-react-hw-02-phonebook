@@ -10,12 +10,16 @@ export class App extends Component {
     filter: '',
   };
 
-  handleSubmit = event => {
-    this.setState(state => [...state.contacts, { ...event, id: nanoid() }]);
+  handleSubmit = value => {
+    this.setState(state => {
+      return {
+        contacts: [...state.contacts, { ...value, id: nanoid(10) }],
+      };
+    });
   };
 
-  handleFind = event => {
-    this.setState({ name: event.target.value });
+  onFilterChange = event => {
+    this.setState({ filter: event.target.value });
   };
 
   handleDeleteBtn = event => {
@@ -25,16 +29,18 @@ export class App extends Component {
   };
 
   render() {
+    const { filter, contacts } = this.state;
+
     return (
       <>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.handleSubmit} />
 
         <h2>Contacts</h2>
-        <Filter onChange={this.handleFind} />
+        <Filter onChange={this.onFilterChange} value={filter} />
         <ContactList
-          contacts={this.state.contacts}
-          filter={this.state.filter}
+          contacts={contacts}
+          filter={filter}
           onClick={this.handleDeleteBtn}
         />
       </>

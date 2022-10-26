@@ -1,10 +1,10 @@
 import {} from './Filter.styled';
 
-export const Filter = ({ onChange }) => {
+export const Filter = ({ onChange, value }) => {
   return (
     <label>
-      Find contacts be name
-      <input onChange={onChange} />
+      Find contacts by name
+      <input onChange={onChange} value={value} />
     </label>
   );
 };

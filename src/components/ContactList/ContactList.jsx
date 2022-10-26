@@ -3,8 +3,9 @@ import { Contact } from 'components/Contact';
 
 export const ContactList = ({ contacts, filter, onClick }) => {
   const filteredContacts = contacts.filter(contact =>
-    contact.name.includes(filter)
+    contact.name.toLowerCase().includes(filter.toLowerCase())
   );
+
   return (
     <Contacts>
       {filteredContacts.map(contact => {

@@ -1,7 +1,14 @@
 import { Component } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import { TiDocumentAdd } from 'react-icons/ti';
-import { SubmitBtn } from './ContactForm.styled';
+import {
+  Form,
+  FieldWraper,
+  Field,
+  ErrorMessage,
+  SubmitBtn,
+} from './ContactForm.styled';
+import { contactsFormValidate } from 'constants';
 
 const initialValues = {
   name: '',
@@ -9,32 +16,29 @@ const initialValues = {
 };
 
 export class ContactForm extends Component {
+  handleSubmit = (values, { resetForm }) => {
+    this.props.onSubmit(values);
+    resetForm(initialValues);
+  };
+
   render() {
     return (
-      <Formik initialValues={initialValues} onSubmit={this.props.onSubmit}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={contactsFormValidate}
+        onSubmit={this.handleSubmit}
+      >
         <Form>
-          <label>
+          <FieldWraper>
             Name
-            <Field
-              type="text"
-              name="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-              required
-            />
-            <ErrorMessage name="name" />
-          </label>
-          <label>
+            <Field type="text" name="name" />
+            <ErrorMessage name="name" component="span" />
+          </FieldWraper>
+          <FieldWraper>
             Phone
-            <Field
-              type="tel"
-              name="number"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-              required
-            />
-            <ErrorMessage name="number" />
-          </label>
+            <Field type="tel" name="number" />
+            <ErrorMessage name="number" component="span" />
+          </FieldWraper>
           <SubmitBtn type="submit">
             <TiDocumentAdd size="30" />
             Add contact
