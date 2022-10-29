@@ -1,10 +1,10 @@
-import {} from './Filter.styled';
+import { FilterWraper, FilterName, FilterField } from './Filter.styled';
 
 export const Filter = ({ onChange, value }) => {
   return (
-    <label>
-      Find contacts by name
-      <input onChange={onChange} value={value} />
-    </label>
+    <FilterWraper>
+      <FilterName>Find contacts by name</FilterName>
+      <FilterField onChange={onChange} value={value} />
+    </FilterWraper>
   );
 };

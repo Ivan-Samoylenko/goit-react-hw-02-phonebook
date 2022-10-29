@@ -6,22 +6,36 @@ import {
 } from 'formik';
 
 export const Form = styled(FormikForm)`
-  width: 600px;
+  width: 312px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: ${p => p.theme.space[1]};
+  padding-bottom: ${p => p.theme.space[1]};
 
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: ${p => p.theme.space[2]};
+
+  background-color: ${p => p.theme.colors.bcg.secondary};
+
+  border-radius: ${p => p.theme.radii.main};
 `;
 
 export const FieldWraper = styled.label`
+  padding: ${p => p.theme.space[1]};
+
   display: flex;
   flex-direction: column;
 `;
 
 export const Field = styled(FormikField)`
-  background-color: rgb(255, 200, 0);
+  padding: ${p => p.theme.space[1]};
+
+  font-size: ${p => p.theme.fontSizes.fields};
+
+  background-color: ${p => p.theme.colors.bcg.input};
+
+  border-radius: ${p => p.theme.radii.main};
 `;
 
 export const ErrorMessage = styled(FormikErrorMessage)`
@@ -42,7 +56,7 @@ export const SubmitBtn = styled.button`
 
   background-color: transparent;
 
-  border-radius: 10px;
+  border-radius: ${p => p.theme.radii.addBtn};
   box-shadow: inset -2px -2px 4px 0 #222222;
 
   cursor: pointer;

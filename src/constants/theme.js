@@ -1,21 +1,21 @@
 export const theme = {
   colors: {
-    texts: '#1F041D',
-    headers: '#410547',
-    accent: '#A638F5',
-    background: '#EEBDFF',
-    btn: {
-      backgroundGood: '#84F538',
-      backgroundNeutral: '#EFF538',
-      backgroundBad: '#F56438',
-      hover: 'rgba(166, 56, 245, 0.5)',
+    main: '#000000',
+    bcg: {
+      input: '#ffc800',
+      secondary: '#ffff77',
+    },
+    accent: {
+      btn: '#ff4600',
     },
   },
-  space: [0, 4, 8, 16, 32, 64],
+  space: ['0', '4px', '8px', '16px', '32px'],
   fontSizes: {
-    headers: 48,
-    texts: 24,
-    btn: 36,
+    text: '24px',
+    deleteBtn: '8px',
+    addBtn: '24px',
+    fields: '15px',
+    contact: '12px',
   },
   fontWeights: {
     regular: 400,
@@ -37,10 +37,12 @@ export const theme = {
     btn: `2px dashed #A638F5`,
   },
   radii: {
-    btn: 8,
+    addBtn: '10px',
+    main: '8px',
   },
   shadows: {
     btn: `0 0 2px 1px #A638F5`,
     btnHover: `0 0 8px 4px #A638F5`,
   },
+  transition: 'ease-in-out 200ms',
 };

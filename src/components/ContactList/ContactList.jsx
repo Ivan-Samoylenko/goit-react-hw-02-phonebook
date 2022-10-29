@@ -2,8 +2,9 @@ import { Contacts, ContactsItem } from './ContactList.styled';
 import { Contact } from 'components/Contact';
 
 export const ContactList = ({ contacts, filter, onClick }) => {
+  const lowerCaseFilter = filter.toLowerCase();
   const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+    contact.name.toLowerCase().includes(lowerCaseFilter)
   );
 
   return (

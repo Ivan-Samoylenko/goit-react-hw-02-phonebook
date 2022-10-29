@@ -17,6 +17,17 @@ const initialValues = {
 
 export class ContactForm extends Component {
   handleSubmit = (values, { resetForm }) => {
+    const lowerCaseName = values.name.toLowerCase();
+
+    if (
+      this.props.contacts.some(
+        contact => contact.name.toLowerCase() === lowerCaseName
+      )
+    ) {
+      alert(`${values.name} is already in contacts`);
+      return;
+    }
+
     this.props.onSubmit(values);
     resetForm(initialValues);
   };

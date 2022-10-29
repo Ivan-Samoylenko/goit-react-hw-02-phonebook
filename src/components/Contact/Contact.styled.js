@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
 export const Name = styled.p`
-  font-size: 30px;
+  width: 130px;
+
+  font-size: ${p => p.theme.fontSizes.contact};
+  text-align: start;
 `;
 
 export const Phone = styled.p`
-  font-size: 30px;
+  width: 128px;
+
+  font-size: ${p => p.theme.fontSizes.contact};
+  text-align: start;
+  white-space: nowrap;
 `;
 
 export const DeleteBtn = styled.button`
@@ -17,7 +24,7 @@ export const DeleteBtn = styled.button`
   flex-direction: column;
   align-items: center;
 
-  font-size: 8px;
+  font-size: ${p => p.theme.fontSizes.deleteBtn};
 
   color: currentColor;
   background-color: transparent;
@@ -26,8 +33,8 @@ export const DeleteBtn = styled.button`
   cursor: pointer;
   outline: none;
 
-  transition: color ease-in-out 200ms, box-shadow ease-in-out 200ms,
-    transform ease-in-out 200ms;
+  transition: color ${p => p.theme.transition},
+    box-shadow ${p => p.theme.transition}, transform ${p => p.theme.transition};
 
   svg {
     fill: currentColor;
@@ -36,7 +43,7 @@ export const DeleteBtn = styled.button`
   :hover,
   :focus {
     color: orangered;
-    box-shadow: 0 0 2px 2px orangered;
+    box-shadow: 0 0 2px 2px ${p => p.theme.colors.accent.btn};
   }
 
   :active {
