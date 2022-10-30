@@ -4,20 +4,9 @@ import { ContactForm } from 'components/ContactForm';
 import { Filter } from 'components/Filter';
 import { ContactList } from 'components/ContactList';
 
-const initialState = [
-  {
-    id: 'dffdg5f4ds6gf',
-    name: 'Alevperevertina Gofrovmagnitogoskivna',
-    number: '+380 (95) 758-65-98',
-  },
-  { id: 'dfgdfgdffdg', name: 'Solomiya', number: '+38095465' },
-  { id: '446dfgh6456fg', name: 'Portfel', number: '+38095465' },
-  { id: '46fgh64dfgh232', name: 'Kolomiets', number: '+38095465' },
-];
-
 export class App extends Component {
   state = {
-    contacts: initialState,
+    contacts: [],
     filter: '',
   };
 
