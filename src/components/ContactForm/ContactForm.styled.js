@@ -39,29 +39,33 @@ export const Field = styled(FormikField)`
 `;
 
 export const ErrorMessage = styled(FormikErrorMessage)`
-  color: red;
+  font-size: ${p => p.theme.fontSizes.mini};
+  font-weight: bold;
+
+  color: ${p => p.theme.colors.error};
 `;
 
 export const SubmitBtn = styled.button`
   margin-right: auto;
   margin-left: auto;
-  border: 0 solid transparent;
-  padding: 4px 16px;
+  border: ${p => p.theme.borders.invisible};
+  padding: ${p => p.theme.space[1]} ${p => p.theme.space[3]};
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 24px;
+  font-size: ${p => p.theme.fontSizes.addBtn};
 
   background-color: transparent;
 
   border-radius: ${p => p.theme.radii.addBtn};
-  box-shadow: inset -2px -2px 4px 0 #222222;
+  box-shadow: inset -2px -2px 4px 0 currentColor;
 
   cursor: pointer;
 
-  transition: color ease-in-out 200ms, box-shadow ease-in-out 200ms;
+  transition: color ${p => p.theme.transition},
+    box-shadow ${p => p.theme.transition};
 
   svg {
     fill: currentColor;
@@ -69,11 +73,11 @@ export const SubmitBtn = styled.button`
 
   :hover,
   :focus {
-    color: orangered;
-    box-shadow: inset -2px -2px 4px 0 orangered;
+    color: ${p => p.theme.colors.accent.btn};
+    box-shadow: inset -2px -2px 4px 0 ${p => p.theme.colors.accent.btn};
   }
 
   :active {
-    box-shadow: inset 2px 2px 4px 0 orangered;
+    box-shadow: inset 2px 2px 4px 0 ${p => p.theme.colors.accent.btn};
   }
 `;

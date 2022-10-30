@@ -1,21 +1,21 @@
 export const theme = {
   colors: {
     main: '#000000',
+    error: '#ff0000',
     bcg: {
       input: '#ffc800',
       secondary: '#ffff77',
     },
     accent: {
-      btn: '#ff4600',
+      btn: '#3d9403',
     },
   },
-  space: ['0', '4px', '8px', '16px', '32px'],
+  space: ['0', '4px', '8px', '16px'],
   fontSizes: {
-    text: '24px',
-    deleteBtn: '8px',
     addBtn: '24px',
     fields: '15px',
     contact: '12px',
+    mini: '10px',
   },
   fontWeights: {
     regular: 400,
@@ -29,20 +29,19 @@ export const theme = {
     large: `@media screen and (min-width: 1280px)`,
   },
   sizes: {
-    mobile: 480,
-    tablet: 768,
-    desctop: 1280,
+    mobile: '480px',
+    tablet: '768px',
+    desctop: '1280px',
   },
   borders: {
-    btn: `2px dashed #A638F5`,
+    invisible: `0 solid transparent`,
   },
   radii: {
     addBtn: '10px',
     main: '8px',
   },
   shadows: {
-    btn: `0 0 2px 1px #A638F5`,
-    btnHover: `0 0 8px 4px #A638F5`,
+    recomended: `0 0 2px 1px #A638F5`,
   },
   transition: 'ease-in-out 200ms',
 };

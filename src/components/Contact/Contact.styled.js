@@ -18,13 +18,13 @@ export const Phone = styled.p`
 export const DeleteBtn = styled.button`
   width: 45px;
   height: 45px;
-  border: 0 solid transparent;
+  border: ${p => p.theme.borders.invisible};
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  font-size: ${p => p.theme.fontSizes.deleteBtn};
+  font-size: ${p => p.theme.fontSizes.mini};
 
   color: currentColor;
   background-color: transparent;
@@ -42,7 +42,7 @@ export const DeleteBtn = styled.button`
 
   :hover,
   :focus {
-    color: orangered;
+    color: ${p => p.theme.colors.accent.btn};
     box-shadow: 0 0 2px 2px ${p => p.theme.colors.accent.btn};
   }
 

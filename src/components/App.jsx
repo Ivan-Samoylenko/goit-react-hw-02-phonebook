@@ -31,11 +31,9 @@ export class App extends Component {
     this.setState({ filter: event.target.value });
   };
 
-  handleDeleteBtn = event => {
-    const targetId = event.currentTarget.id;
-
+  handleDeleteBtn = id => {
     this.setState(state => ({
-      contacts: state.contacts.filter(contact => contact.id !== targetId),
+      contacts: state.contacts.filter(contact => contact.id !== id),
     }));
   };
 

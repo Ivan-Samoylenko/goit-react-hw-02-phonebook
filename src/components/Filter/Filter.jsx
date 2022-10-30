@@ -1,4 +1,5 @@
 import { FilterWraper, FilterName, FilterField } from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ onChange, value }) => {
   return (
@@ -7,4 +8,9 @@ export const Filter = ({ onChange, value }) => {
       <FilterField onChange={onChange} value={value} />
     </FilterWraper>
   );
+};
+
+Filter.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };

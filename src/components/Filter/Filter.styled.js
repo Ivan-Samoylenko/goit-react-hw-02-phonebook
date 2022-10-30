@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 export const FilterWraper = styled.label`
-  padding: ${p => p.theme.space[1]};
+  width: 312px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: ${p => p.theme.space[1]};
+  padding-bottom: ${p => p.theme.space[1]};
 
   display: flex;
   flex-direction: column;
