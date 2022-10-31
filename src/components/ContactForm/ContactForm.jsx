@@ -17,6 +17,17 @@ const initialValues = {
 };
 
 export class ContactForm extends Component {
+  static propTypes = {
+    contacts: PropTypes.arrayOf(
+      PropTypes.exact({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   handleSubmit = (values, { resetForm }) => {
     const lowerCaseName = values.name.toLowerCase();
 
@@ -60,14 +71,3 @@ export class ContactForm extends Component {
     );
   }
 }
-
-ContactForm.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  onSubmit: PropTypes.func.isRequired,
-};

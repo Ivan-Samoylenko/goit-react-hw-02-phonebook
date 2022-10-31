@@ -2,19 +2,21 @@ import { Contacts, ContactsItem } from './ContactList.styled';
 import PropTypes from 'prop-types';
 import { Contact } from 'components/Contact';
 
-export const ContactList = ({ contacts, filter, onClick }) => {
-  const lowerCaseFilter = filter.toLowerCase();
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(lowerCaseFilter)
-  );
-
+export const ContactList = ({ contacts, onClick }) => {
   return (
     <Contacts>
-      {filteredContacts.map(contact => {
+      {contacts.map(contact => {
         const { name, number, id } = contact;
+
         return (
           <ContactsItem key={id}>
-            <Contact name={name} number={number} onClick={onClick} id={id} />
+            <Contact
+              name={name}
+              number={number}
+              onClick={() => {
+                onClick(id);
+              }}
+            />
           </ContactsItem>
         );
       })}
@@ -30,6 +32,5 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ).isRequired,
-  filter: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
